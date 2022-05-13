@@ -13,3 +13,6 @@
 5. Containerize this.
 
 6. Kubernetes cluster it
+
+
+Future: Employees listing stuff seperate page?
