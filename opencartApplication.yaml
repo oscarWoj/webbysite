@@ -16,7 +16,7 @@ spec:
     #change to opencart?
     namespace: default
 
-  syncPolicy:
+syncPolicy:
   # uncomment to create namespace if not present
 #    syncOptions:
 #    - CreateNamespace=true
@@ -24,4 +24,3 @@ spec:
   automated:
     selfHeal: true
     prune: true
-
