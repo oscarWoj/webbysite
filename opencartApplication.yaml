@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opencart-argo
+  namespace: argocd
+spec:
+# Will have to change
+  project: default
+
+  source:
+  #Will have to change
+    repoURL: https://github.com/oscarWoj/webbysite.git
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    #change to opencart?
+    namespace: default
+
+  syncPolicy:
+  # uncomment to create namespace if not present
+#    syncOptions:
+#    - CreateNamespace=true
+
+  automated:
+    selfHeal: true
+    prune: true
+
