@@ -10,7 +10,7 @@ spec:
 
   source:
   #Will have to change
-    repoURL: https://github.com/bitnami/charts/tree/master/bitnami/opencart
+    repoURL: https://charts.bitnami.com/bitnami/opencart
     targetRevision: 12.5.5
   destination:
     server: https://kubernetes.default.svc
