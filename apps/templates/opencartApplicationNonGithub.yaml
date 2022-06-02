@@ -20,6 +20,10 @@ spec:
             https: 444
         ingress:
           enabled: true
+        mariadb:
+          auth:
+            rootpassword: "12"
+            password: "13"
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 12.2.5
   destination:
