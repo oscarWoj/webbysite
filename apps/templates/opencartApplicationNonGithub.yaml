@@ -11,6 +11,15 @@ spec:
   source:
   #Will have to change
     chart: opencart
+    helm:
+      values: |
+        service:
+          type: ClusterIP
+          ports:
+            http: 81
+            https: 444
+        ingress:
+          enabled: true
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 12.2.5
   destination:
