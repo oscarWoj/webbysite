@@ -29,7 +29,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     #change to opencart?
-    namespace: default
+    namespace: opencart
 
   syncPolicy:
   # uncomment to create namespace if not present
