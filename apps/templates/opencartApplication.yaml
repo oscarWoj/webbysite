@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: opencart
-  namespace: opencart
+  name: opencart-argo
+  namespace: default
 
 spec:
 # Will have to change
-  project: opencart
+  project: default
 
   source:
   #Will have to change
@@ -29,12 +29,12 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     #change to opencart?
-    namespace: opencart
+    namespace: default
 
   syncPolicy:
   # uncomment to create namespace if not present
-    syncOptions:
-    - CreateNamespace=true
+#    syncOptions:
+#    - CreateNamespace=true
 
     automated:
       selfHeal: true
