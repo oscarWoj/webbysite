@@ -22,8 +22,7 @@ spec:
           enabled: true
         mariadb:
           auth:
-            rootpassword: "12"
-            password: "13"
+            existingSecret: "mariadb-secret"
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 12.2.5
   destination:
