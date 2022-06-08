@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: opencart-application
-  namespace: opencart
+  namespace: default
 
 spec:
   project: default
