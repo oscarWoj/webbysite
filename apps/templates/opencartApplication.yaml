@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: opencart-application
-  namespace: default
+  namespace: opencart
 
 spec:
   project: default
@@ -20,12 +20,12 @@ spec:
           enabled: true
         mariadb:
           auth:
-            existingSecret: "mariadb-secret"
+            existingSecret: "opencart-application-mariadb"
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 12.2.5
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: opencart
 
   syncPolicy:
   # uncomment to create namespace if not present
