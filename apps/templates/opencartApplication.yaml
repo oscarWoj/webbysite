@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: opencart-application
-  namespace: opencart
+  namespace: default
 
 spec:
   project: default
@@ -25,7 +25,7 @@ spec:
     targetRevision: 12.2.5
   destination:
     server: https://kubernetes.default.svc
-    namespace: opencart
+    namespace: default
 
   syncPolicy:
   # uncomment to create namespace if not present
