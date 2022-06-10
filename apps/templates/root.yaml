@@ -14,8 +14,6 @@ spec:
     repoURL: https://github.com/oscarWoj/webbysite.git
     targetRevision: HEAD
   syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
