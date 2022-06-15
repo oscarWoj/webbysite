@@ -7,8 +7,8 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
-  project: default
+    namespace: argocd
+  project: argocd2
   source:
     path: apps/
     repoURL: https://github.com/oscarWoj/webbysite.git

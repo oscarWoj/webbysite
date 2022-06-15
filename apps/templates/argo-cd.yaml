@@ -2,19 +2,23 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-cd
-  namespace: default
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
-  project: default
+    namespace: argocd
+  project: argocd
   source:
     path: charts/argo-cd
     repoURL: https://github.com/oscarWoj/webbysite.git
     targetRevision: HEAD
   syncPolicy:
+
+    syncOptions:
+    - CreateNamespace=true
+
     automated:
       prune: true
       selfHeal: true
