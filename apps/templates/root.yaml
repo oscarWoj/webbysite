@@ -2,14 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: root
-  namespace: argocd
+  namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
-  project: argocd2
+    namespace: default
+  project: root
   source:
     path: apps/
     repoURL: https://github.com/oscarWoj/webbysite.git
