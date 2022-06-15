@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-  project: root
+  project: default 
   source:
     path: apps/
     repoURL: https://github.com/oscarWoj/webbysite.git
