@@ -1,6 +1,7 @@
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
+  argocd.argoproj.io/hook: PostSync
   name: hpa
   namespace: opencart
 spec:
