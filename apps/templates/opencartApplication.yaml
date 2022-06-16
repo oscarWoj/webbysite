@@ -3,7 +3,7 @@ kind: Application
 metadata:
   #argocd.argoproj.io/sync-wave: "-2"
   name: opencart-application
-  namespace: argo-cd
+  namespace: default
 
 spec:
   project: default 
