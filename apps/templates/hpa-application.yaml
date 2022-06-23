@@ -8,7 +8,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: opencart-application
+    name: opencart
   minReplicas: 2
   maxReplicas: 8
   metrics:
