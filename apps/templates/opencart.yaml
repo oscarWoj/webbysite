@@ -6,7 +6,7 @@ metadata:
   namespace: default
 
 spec:
-  project: infrastructure
+  project: default 
 
   source:
     chart: opencart
