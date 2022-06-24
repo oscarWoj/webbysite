@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   #argocd.argoproj.io/sync-wave: "-2"
-  name: pypiserver
+  name: pypi-server
   namespace: default
 
 spec:
@@ -15,7 +15,7 @@ spec:
     targetRevision: 3.1.0
   destination:
     server: https://kubernetes.default.svc
-    namespace: pypiserver
+    namespace: pypi-server
 
   syncPolicy:
     automated:
