@@ -2,24 +2,24 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   #argocd.argoproj.io/sync-wave: "-2"
-  name: pypi-server
+  name: pypiserver
   namespace: default
 
 spec:
   project: default
   source:
-    chart: pypi-server
+    chart: pypiserver
     #helm:
     #  values: 
-    repoURL: https://cgsimmons.github.io/charts/
-    targetRevision: 0.1.0
+    repoURL: https://owkin.github.io/charts
+    targetRevision: 3.1.0
   destination:
     server: https://kubernetes.default.svc
-    namespace: pypi-server
+    namespace: pypiserver
 
   syncPolicy:
     automated:
-      selfHeal: true
+  #    selfHeal: true
       prune: true
 
 
