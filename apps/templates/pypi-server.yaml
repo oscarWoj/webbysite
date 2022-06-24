@@ -9,8 +9,10 @@ spec:
   project: default
   source:
     chart: pypiserver
-    #helm:
-    #  values: 
+    helm:
+      values: |
+        ingress:
+          enabled: true
     repoURL: https://owkin.github.io/charts
     targetRevision: 3.1.0
   destination:
