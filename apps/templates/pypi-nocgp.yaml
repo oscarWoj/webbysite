@@ -19,7 +19,7 @@ spec:
           service:
             name: pypi-nocgp-pypiserver
             port:
-              name: 80
+              name: http
           annotations:
             kubernetes.io/ingress.class: nginx
           enabled: true
