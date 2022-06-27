@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   #argocd.argoproj.io/sync-wave: "-2"
-  name: pypi-server
+  name: pypi-nocgp
   namespace: default
 
 spec:
@@ -10,18 +10,28 @@ spec:
   source:
     chart: pypiserver
     helm:
-      #values: |
-        #ingress:
-          #enabled: true
+      values: |
+        persistence:
+          enabled: true
+        ingress:
+          hosts: pypi.local
+          path: /
+          service:
+            name: pypi-nocgp-pypiserver
+            port:
+              name: 80
+          annotations:
+            kubernetes.io/ingress.class: nginx
+          enabled: true
     repoURL: https://owkin.github.io/charts
     targetRevision: 3.1.0
   destination:
     server: https://kubernetes.default.svc
-    namespace: pypi-server
+    namespace: pypi-nocgp
 
   syncPolicy:
     automated:
-  #    selfHeal: true
+      selfHeal: true
       prune: true
 
 
