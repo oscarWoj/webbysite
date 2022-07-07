@@ -8,24 +8,16 @@ metadata:
 spec:
   project: default
   source:
-    chart: pypiserver
-    helm:
-      values: |
-        persistence:
-          enabled: true
-        ingress:
-          annotations:
-            kubernetes.io/ingress.class: nginx
-          enabled: false
-    repoURL: https://owkin.github.io/charts
-    targetRevision: 3.1.0
+    repoURL: 'https://github.com/oscarWoj/myPypi.git'
+    path: .
+    targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: pypi-nocgp
+    namespace: default
 
   syncPolicy:
     automated:
-      selfHeal: false
+      selfHeal: true
       prune: true
 
 
