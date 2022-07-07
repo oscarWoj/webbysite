@@ -8,12 +8,21 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/oscarWoj/myPypi.git'
-    path: .
-    targetRevision: HEAD
+    chart: pypiserver
+    helm:
+      values: |
+        persistence:
+          enabled: true
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+          hosts:
+            - pypinocgp.ghgsat.science
+    repoURL: https://owkin.github.io/charts
+    targetRevision: 3.1.0
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: pypi-nocgp
 
   syncPolicy:
     automated:
